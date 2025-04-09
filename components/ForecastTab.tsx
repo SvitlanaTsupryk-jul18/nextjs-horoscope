@@ -1,6 +1,7 @@
 import React from "react";
 import { ForecastTabProps } from "../types/ForecastTabProps";
 import Image from "next/image";
+import { basePath } from "@/utils/api";
 
 const ForecastCard: React.FC<ForecastTabProps> = ({
   weekday,
@@ -15,7 +16,7 @@ const ForecastCard: React.FC<ForecastTabProps> = ({
       <h4>{date}</h4>
       <p>
         <Image
-          src="/icons/health.svg"
+          src={`${basePath}/icons/health.svg`}
           alt="Health icon"
           width={16}
           height={16}
@@ -24,7 +25,7 @@ const ForecastCard: React.FC<ForecastTabProps> = ({
       </p>
       <p>
         <Image
-          src="/icons/relationships.svg"
+          src={`${basePath}/icons/relationships.svg`}
           alt="Relationship icon"
           width={16}
           height={16}
@@ -33,7 +34,7 @@ const ForecastCard: React.FC<ForecastTabProps> = ({
       </p>
       <p>
         <Image
-          src="/icons/career.svg"
+          src={`${basePath}/icons/career.svg`}
           alt="Career icon"
           width={16}
           height={16}

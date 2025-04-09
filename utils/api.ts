@@ -22,17 +22,21 @@ export const getCatFact = async (maxLength: number) => {
   return response.data.fact;
 };
 
+const isGithubPages = process.env.NODE_ENV === "production";
+const repoName = "nextjs-horoscope";
+export const basePath = isGithubPages ? `/${repoName}` : "";
+
 export const zodiacImages: { [key: string]: string } = {
-  Aries: "/images/aries.svg",
-  Taurus: "/images/taurus.svg",
-  Gemini: "/images/gemini.svg",
-  Cancer: "/images/cancer.svg",
-  Leo: "/images/leo.svg",
-  Virgo: "/images/virgo.svg",
-  Libra: "/images/libra.svg",
-  Scorpio: "/images/scorpio.svg",
-  Sagittarius: "/images/sagittarius.svg",
-  Capricorn: "/images/capricorn.svg",
-  Aquarius: "/images/aquarius.svg",
-  Pisces: "/images/pisces.svg",
+  Aries: `${basePath}/images/aries.svg`,
+  Taurus: `${basePath}/images/taurus.svg`,
+  Gemini: `${basePath}/images/gemini.svg`,
+  Cancer: `${basePath}/images/cancer.svg`,
+  Leo: `${basePath}/images/leo.svg`,
+  Virgo: `${basePath}/images/virgo.svg`,
+  Libra: `${basePath}/images/libra.svg`,
+  Scorpio: `${basePath}/images/scorpio.svg`,
+  Sagittarius: `${basePath}/images/sagittarius.svg`,
+  Capricorn: `${basePath}/images/capricorn.svg`,
+  Aquarius: `${basePath}/images/aquarius.svg`,
+  Pisces: `${basePath}/images/pisces.svg`,
 };

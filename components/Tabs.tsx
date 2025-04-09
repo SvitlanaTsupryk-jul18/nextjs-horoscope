@@ -3,6 +3,7 @@ import { ForecastTabProps } from "../types/ForecastTabProps";
 import ForecastTab from "./ForecastTab";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { basePath } from "@/utils/api";
 
 type Props = {
   forecast: ForecastTabProps[];
@@ -29,10 +30,10 @@ const Tabs: React.FC<Props> = ({ forecast }) => {
   const { date, health, relationship, career, catFact } = forecast[activeTab];
   const img =
     Math.max(health, relationship, career) === health
-      ? "/images/health.svg"
+      ? `${basePath}/images/health.svg`
       : Math.max(health, relationship, career) === relationship
-      ? "/images/love.svg"
-      : "/images/work.svg";
+      ? `${basePath}/images/love.svg`
+      : `${basePath}/images/work.svg`;
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(window.location.href);
